@@ -45,6 +45,7 @@ Route::post('posts/{post}', [\App\Http\Controllers\CommentController::class, 'cr
 Route::get('policy',function (){
     return view('facebook-privacy');
 });
+//Testing GitHub
 
 // what you see in the URL of the browser
 // the controller and the function
