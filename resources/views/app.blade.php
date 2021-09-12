@@ -97,7 +97,7 @@
 <!--End of Google Analytics-->
 
 <!--Footer-->
-<div class="mt-5 bg-light fixed-bottom">
+<div class="mt-5 bg-light ">
     <div class="col-lg-10 row col-sm-12 m-auto pt-4 p-3">
         <div class="col-lg-10">
             © 2021 Swahili 4 All.

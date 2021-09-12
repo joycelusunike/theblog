@@ -108,6 +108,8 @@ class PostController extends Controller
         //print_r($category->id);
 
 //continue tomorrow
+        if ($request->file("upload"))
+        {
         $filename = date('dhmi') // 289830
             . Auth::id() // 1
             . '.' // .
@@ -120,6 +122,11 @@ class PostController extends Controller
         // by "upload" we mean input file "upload" from the form - so what file user selected
         // by "$filename" we generate random name using date + user Auth id, e.g. 27843301.jpg
 
+            Post::where('id',$post['id']) // you can use where('id', 1)
+            ->update([
+                'upload'=>$filename,
+            ]);
+        }
 
         Post::where('id',$post['id']) // you can use where('id', 1)
             ->update([
@@ -127,9 +134,17 @@ class PostController extends Controller
             'featured'=>$request->post('featured'),
             'message'=>$request->post('message'),
             'category_id'=>$category->id,
-            'upload'=>$filename,
         ]);
         return redirect('posts/'.$post['id']);
+    }
+
+    public function delete_image(Post $post){
+        //Storage::disk('public')->delete($post->upload);
+        if ($post->upload) {
+            Storage::delete('public/'.$post->upload);
+        }
+
+        return redirect('posts/'.$post->id);
     }
 
     public function show(Post $post){

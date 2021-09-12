@@ -34,7 +34,7 @@
             <textarea  name="message" class="form-control" id="message" aria-describedby="nameHelp">{{old('message',$post['message'])}}</textarea>
         </div>
         <div class="mb-3">
-            <label for="upload" class="form-label">Upload Image(only if you want to change it)</label>
+            <label for="upload" class="form-label">Upload Image(only if you want to change it) | <a href="/delete-image/{{ $post['id'] }}">delete image</a></label>
             <input name="upload" class="form-control" type="file" id="upload">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

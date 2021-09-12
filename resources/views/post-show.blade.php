@@ -10,10 +10,16 @@
             <p class="card-text">{!! htmlspecialchars_decode($post->message) !!}</p>
         </div>
     </div>
-    <p>{{$post->user->name}}</p>
+
+
+    <!--<p>{{$post->user->name}}</p>-->
+
 
     @auth()
-    <form method="post" action="">
+        @if(\Illuminate\Support\Facades\Auth::user()->admin == 1)
+            <p><a href="/edit/{{$post->id}}"  class="btn btn-primary mt-3">Edit Post</a></p>
+        @endif
+        <form method="post" action="">
         @csrf {{--laravel form protection feature--}}
         <div class="mb-3">
             <label for="comment" class="form-label">Your Comment</label>
@@ -22,6 +28,7 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
     @endauth
 
      @foreach($post->comments as $comment)
