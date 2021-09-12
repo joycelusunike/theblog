@@ -47,6 +47,8 @@ Route::get('policy',function (){
     return view('facebook-privacy');
 });
 Route::get('delete-image/{post}',[\App\Http\Controllers\PostController::class,'delete_image'])->middleware('auth','admin');
+Route::get('users',[\App\Http\Controllers\UserController::class,'index'])->middleware('auth','admin');
+Route::get('users/{user}',[\App\Http\Controllers\UserController::class,'delete'])->middleware('auth','admin');
 //Testing GitHub
 
 // what you see in the URL of the browser
