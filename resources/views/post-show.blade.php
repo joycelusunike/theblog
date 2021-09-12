@@ -17,7 +17,10 @@
 
     @auth()
         @if(\Illuminate\Support\Facades\Auth::user()->admin == 1)
-            <p><a href="/edit/{{$post->id}}"  class="btn btn-primary mt-3">Edit Post</a></p>
+            <p>
+                <a href="/edit/{{$post->id}}"  class="btn btn-warning mt-3">Edit Post</a>
+                <a href="/delete/{{$post->id}}"  class="btn btn-danger mt-3">Delete Post</a>
+            </p>
         @endif
         <form method="post" action="">
         @csrf {{--laravel form protection feature--}}

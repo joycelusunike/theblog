@@ -154,4 +154,9 @@ class PostController extends Controller
             'title'=>$post['title'],
         ]);
     }
+
+    public function delete(Post $post){
+        $post->delete();
+        return redirect('/posts');
+    }
 }

@@ -42,6 +42,7 @@ Route::get('edit/{post}',[\App\Http\Controllers\PostController::class,'edit'])->
 Route::get('posts',[\App\Http\Controllers\PostController::class,'all']);
 Route::get('posts/{post}', [\App\Http\Controllers\PostController::class, 'show']);
 Route::post('posts/{post}', [\App\Http\Controllers\CommentController::class, 'create'])->middleware('auth');
+Route::get('delete/{post}',[\App\Http\Controllers\PostController::class,'delete'])->middleware('auth','admin');
 Route::get('policy',function (){
     return view('facebook-privacy');
 });
