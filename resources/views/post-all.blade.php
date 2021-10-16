@@ -22,6 +22,9 @@
                             {{--<p class="card-text">{{Str::words($post->message, 30)}}</p>--}}
 
                             <a href="/posts/{{$post->id}}" class="btn btn-primary">Read more about {{$post->title}}</a>
+                           {{-- {{  $post->category->name }}--}}
+                            <a href="/category/{{$post->category->id}}">{{$post->category->name}}</a>
+
                         </div>
                     </div>
                 </div>
@@ -30,6 +33,7 @@
              </div>
         </div>
         <div class="col-3">
+            <a href="/posts">All Posts</a>
             @foreach($categories as $category)
                 <p><a href="/category/{{$category->id}}">{{$category->name}}</a> </p>
             @endforeach

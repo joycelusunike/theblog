@@ -31,6 +31,7 @@
         </div>
         <div class="col-3">
             <h3>Select Category</h3>
+            <a href="/posts">All Posts</a>
             @foreach($categories as $category)
                 <p class="mt-3">
                     <a href="/category/{{$category->id}}">{{$category->name}}</a>

@@ -5,16 +5,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" type="image/ico" href="/favicon.ico"/>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+    <script src="https://kit.fontawesome.com/f2e61dea28.js" crossorigin="anonymous"></script>
     <title>The Blog</title>
+
+    <style>
+        .navbar a{
+            color: red;
+        }
+        .navbar ul li a{
+            color: red !important;
+        }
+    </style>
 
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: #0d6efd;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><i class="fas fa-home" style="font-size: xxx-large; color: firebrick"></i></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,6 +61,7 @@
                                 Admin
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/category">Create Category</a></li>
                                 <li><a class="dropdown-item" href="/post">Create post</a></li>
                                 <li><a class="dropdown-item" href="/users">View Users</a></li>
                                 <li><hr class="dropdown-divider"></li>

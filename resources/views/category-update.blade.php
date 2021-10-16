@@ -15,15 +15,10 @@
         @csrf {{--laravel form protection feature--}}
         <div class="mb-3">
             <label for="name" class="form-label">Category Name</label>
-            <input type="text"  name="name" class="form-control" id="name" aria-describedby="nameHelp">
+            <input value="{{$category['name']}}" type="text"  name="name" class="form-control" id="name" aria-describedby="nameHelp">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <h1>Posts Categories</h1>
-
-    @foreach ($categories as $category)
-        <p>{{$category->name}} <a href="update-category/{{$category->id}}">Update</a>  <a href="delete-category/{{$category->id}}">Delete</a></p>
-    @endforeach
-
 @endsection
+

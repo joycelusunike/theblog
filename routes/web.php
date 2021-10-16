@@ -34,6 +34,9 @@ Route::post('profile',[\App\Http\Controllers\DashboardController::class,'edit_pr
 Route::get('view-profile',[\App\Http\Controllers\DashboardController::class,'view_profile'])->middleware('auth');
 Route::get('category',[\App\Http\Controllers\CategoryController::class,'index'])->middleware('auth', 'admin');
 Route::post('category',[\App\Http\Controllers\CategoryController::class,'create'])->middleware('auth', 'admin');
+Route::get('update-category/{category}',[\App\Http\Controllers\CategoryController::class,'update'])->middleware('auth','admin');
+Route::post('update-category/{category}',[\App\Http\Controllers\CategoryController::class,'process'])->middleware('auth','admin');
+Route::get('delete-category/{category}',[\App\Http\Controllers\CategoryController::class,'delete'])->middleware('auth','admin');
 Route::get('post',[\App\Http\Controllers\PostController::class,'index'])->middleware('auth', 'admin');
 Route::get('category/{category}',[\App\Http\Controllers\PostController::class,'showByCategory']);
 Route::post('post',[\App\Http\Controllers\PostController::class,'create'])->middleware('auth', 'admin');
